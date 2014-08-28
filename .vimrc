@@ -63,6 +63,3 @@ let g:tex_conceal = ""
 let Tex_FoldedSections=""
 let Tex_FoldedEnvironments=""
 let Tex_FoldedMisc=""
-
-" use ESC to cancel highlight after search
-"nnoremap <esc> :noh<return><esc>
