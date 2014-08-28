@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/quark/.vim'
+let g:netrw_dirhist_2='/home/quark/hanxiaol/software/libsvm-3.17/java'
+let g:netrw_dirhist_3='/home/quark/Pictures'
+let g:netrw_dirhist_4='/home/quark/.oh-my-zsh'
+let g:netrw_dirhist_5='/home/quark/.oh-my-zsh/custom/example'
+let g:netrw_dirhist_6='/home/quark/hanxiaol/software/libsvm-3.17-F1'
+let g:netrw_dirhist_7='/home/quark/.oh-my-zsh'
