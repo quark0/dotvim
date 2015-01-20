@@ -2,6 +2,8 @@ set nu
 syntax enable
 filetype plugin indent on
 
+set backupdir=~/.backup
+
 set nowrap
 set cursorline
 set smartindent
@@ -28,7 +30,7 @@ let g:indentLine_char = '|'
 " NerdTree
 autocmd VimEnter * nmap <F3> :NERDTreeToggle<CR>
 autocmd VimEnter * imap <F3> <Esc>:NERDTreeToggle<CR>a
-let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=0
 let NERDChristmasTree=1
 let NERDTreeWinSize=30
 
@@ -36,30 +38,40 @@ let g:solarized_italic=0
 let g:solarized_bold=1
 let g:solarized_underline=1
 
-" gvim
+" for base16 colorscheme
+"let base16colorspace=256
 set t_Co=256
 set background=dark
+
+" gvim
 if has("gui_running")
-    colorscheme solarized
-    set guifont=Gohufont\ 12
-    set guioptions-=l
-    set guioptions-=L
-    set guioptions-=m
-    set guioptions-=T
-    set guioptions-=r
+   colorscheme jellybeans
+   "set guifont=Dina\ 8
+   set guifont=Dina\ 8
+   set guioptions-=l
+   set guioptions-=L
+   set guioptions-=m
+   set guioptions-=T
+   set guioptions-=r
 else
-    colorscheme solarized
-    set background=dark
-    let g:indentLine_color_term = 239
+   colorscheme jellybeans
+   "colorscheme solarized
+   "set background=dark
+   let g:indentLine_color_term = 239
 endif
 
 augroup filetype
-    au! BufRead,BufNewFile *.gnuplot set filetype=gnuplot
+   au! BufRead,BufNewFile *.gnuplot set filetype=gnuplot
 augroup END
 
 let g:tex_conceal = ""
 
-" disable folding in latex suite
+" disable folding in latex-suite
 let Tex_FoldedSections=""
 let Tex_FoldedEnvironments=""
 let Tex_FoldedMisc=""
+
+" compile options for latex-suite
+let Tex_DefaultTargetFormat = 'pdf'
+let Tex_ViewRule_pdf = 'acroread'
+let Tex_MultipleCompileFormats = 'pdf, div'
