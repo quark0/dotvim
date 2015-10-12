@@ -17,7 +17,7 @@ set ignorecase
 set smartcase
 
 " powerline
-let g:Powerline_symbols = 'fancy'
+"let g:Powerline_symbols = 'fancy'
 set nocompatible
 set laststatus=2
 
@@ -32,7 +32,7 @@ autocmd VimEnter * nmap <F3> :NERDTreeToggle<CR>
 autocmd VimEnter * imap <F3> <Esc>:NERDTreeToggle<CR>a
 let NERDTreeQuitOnOpen=0
 let NERDChristmasTree=1
-let NERDTreeWinSize=30
+let NERDTreeWinSize=20
 
 let g:solarized_italic=0
 let g:solarized_bold=1
@@ -47,7 +47,7 @@ set background=dark
 if has("gui_running")
    colorscheme jellybeans
    "set guifont=Dina\ 8
-   set guifont=Dina\ 8
+   set guifont=Source\ Code\ Pro\ 8
    set guioptions-=l
    set guioptions-=L
    set guioptions-=m
@@ -73,5 +73,6 @@ let Tex_FoldedMisc=""
 
 " compile options for latex-suite
 let Tex_DefaultTargetFormat = 'pdf'
-let Tex_ViewRule_pdf = 'acroread'
+let Tex_ViewRule_pdf = 'mupdf'
 let Tex_MultipleCompileFormats = 'pdf, div'
+let Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode -file-line-error-style $* && xdotool search --class mupdf key r'  " refresh mupdf after a successful compile
