@@ -30,7 +30,7 @@ let g:indentLine_char = '|'
 " NerdTree
 autocmd VimEnter * nmap <F3> :NERDTreeToggle<CR>
 autocmd VimEnter * imap <F3> <Esc>:NERDTreeToggle<CR>a
-let NERDTreeQuitOnOpen=0
+let NERDTreeQuitOnOpen=1
 let NERDChristmasTree=1
 let NERDTreeWinSize=20
 
@@ -75,4 +75,9 @@ let Tex_FoldedMisc=""
 let Tex_DefaultTargetFormat = 'pdf'
 let Tex_ViewRule_pdf = 'mupdf'
 let Tex_MultipleCompileFormats = 'pdf, div'
-let Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode -file-line-error-style $* && xdotool search --class mupdf key r'  " refresh mupdf after a successful compile
+let Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode -file-line-error-style $*; xdotool search --class mupdf key r'  " refresh mupdf after a successful compile
+
+" disable folding
+let g:vim_markdown_folding_disabled = 1
+
+autocmd FileType python let g:indentLine_enabled = 0
