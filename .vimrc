@@ -9,6 +9,8 @@ set cursorline
 set smartindent
 set shiftwidth=4
 set expandtab
+set tabstop=8
+set softtabstop=4
 
 " search options
 set hlsearch
@@ -16,8 +18,6 @@ set incsearch
 set ignorecase
 set smartcase
 
-" powerline
-"let g:Powerline_symbols = 'fancy'
 set nocompatible
 set laststatus=2
 
@@ -32,9 +32,9 @@ autocmd VimEnter * nmap <F3> :NERDTreeToggle<CR>
 autocmd VimEnter * imap <F3> <Esc>:NERDTreeToggle<CR>a
 let NERDTreeQuitOnOpen=1
 let NERDChristmasTree=1
-let NERDTreeWinSize=20
+let NERDTreeWinSize=25
 
-let g:solarized_italic=0
+let g:solarized_italic=1
 let g:solarized_bold=1
 let g:solarized_underline=1
 
@@ -47,7 +47,7 @@ set background=dark
 if has("gui_running")
    colorscheme jellybeans
    "set guifont=Dina\ 8
-   set guifont=Source\ Code\ Pro\ 8
+   set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 8
    set guioptions-=l
    set guioptions-=L
    set guioptions-=m
@@ -80,4 +80,9 @@ let Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode -file-line-error-st
 " disable folding
 let g:vim_markdown_folding_disabled = 1
 
+" disable indent lines for python
 autocmd FileType python let g:indentLine_enabled = 0
+
+" vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
