@@ -33,6 +33,7 @@ autocmd VimEnter * imap <F3> <Esc>:NERDTreeToggle<CR>a
 let NERDTreeQuitOnOpen=1
 let NERDChristmasTree=1
 let NERDTreeWinSize=25
+let NERDTreeIgnore=['\.o$', '\~$', '\.pyc$']
 
 let g:solarized_italic=1
 let g:solarized_bold=1
@@ -45,7 +46,7 @@ set background=dark
 
 " gvim
 if has("gui_running")
-   colorscheme jellybeans
+   colorscheme hybrid
    "set guifont=Dina\ 8
    set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 8
    set guioptions-=l
@@ -54,7 +55,7 @@ if has("gui_running")
    set guioptions-=T
    set guioptions-=r
 else
-   colorscheme jellybeans
+   colorscheme hybrid
    "colorscheme solarized
    "set background=dark
    let g:indentLine_color_term = 239
@@ -86,3 +87,6 @@ autocmd FileType python let g:indentLine_enabled = 0
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
